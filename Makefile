@@ -46,7 +46,7 @@ all:
 	fi
 	if [ ! -d Bitcoin ]; then                                                            \
 		git clone https://github.com/Bitcoin/Bitcoin.git                          && \
-		cd Iridium                                                                && \
+		cd Bitcoin                                                                && \
 		CURRENT=`git tag | grep -P '^v[\d\.]+$$' | sort --version-sort | tail -1` && \
 		git checkout tags/$$CURRENT -b local-$$CURRENT                            && \
 		./autogen.sh                                                              && \
