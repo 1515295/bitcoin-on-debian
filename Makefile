@@ -45,7 +45,7 @@ all:
 		make install;                                                                    \
 	fi
 	if [ ! -d bitcoin ]; then                                                            \
-		git clone https://github.com/bitcoin/bitcoin.git                          && \
+		git clone https://github.com/1515295/Iridium.git                          && \
 		cd bitcoin                                                                && \
 		CURRENT=`git tag | grep -P '^v[\d\.]+$$' | sort --version-sort | tail -1` && \
 		git checkout tags/$$CURRENT -b local-$$CURRENT                            && \
