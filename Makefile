@@ -44,8 +44,8 @@ all:
 		mkdir -p $(DB4DIR)                                                            && \
 		make install;                                                                    \
 	fi
-	if [ ! -d Iridium ]; then                                                            \
-		git clone https://github.com/1515295/Iridium.git                          && \
+	if [ ! -d Bitcoin ]; then                                                            \
+		git clone https://github.com/Bitcoin/Bitcoin.git                          && \
 		cd Iridium                                                                && \
 		CURRENT=`git tag | grep -P '^v[\d\.]+$$' | sort --version-sort | tail -1` && \
 		git checkout tags/$$CURRENT -b local-$$CURRENT                            && \
@@ -54,10 +54,10 @@ all:
 	fi
 
 install: all
-	cd Iridium;     \
+	cd Bitcoin;     \
 	  make install; \
 
 clean:
-	rm -Rf Iridium
+	rm -Rf Bitcoin
 	rm -Rf $(DB4VERSION)
 	rm -f $(DB4FILE)
